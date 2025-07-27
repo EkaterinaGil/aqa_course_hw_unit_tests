@@ -4,3 +4,10 @@
 n + nn + nnn, где n не перемножаются, а конкатенируются
 
 */
+const n = 2;
+
+const strN = String(n);
+const nn = Number(strN + strN);
+const nnn = Number(strN + strN + strN);
+
+console.log(n + nn + nnn);
