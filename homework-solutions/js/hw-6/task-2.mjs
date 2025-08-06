@@ -22,8 +22,13 @@ const myPizzasT2 = ['Peperoni', 'Caprichosa', 'Diablo', '4 cheeses', 'hawai'];
 
 function comparePizzas(arrayCompetitors, arrayMy) {
   const uniquePizzasList = [];
+  const lowerArrayCompetitors = [];
+  for (const elem of arrayCompetitors) {
+    lowerArrayCompetitors.push(elem.toLowerCase())
+  };
   for (const elemMy of arrayMy) {
-    if (!arrayCompetitors.includes(elemMy)) {
+    const lowerElemMy = elemMy.toLowerCase();
+    if (!lowerArrayCompetitors.includes(lowerElemMy)) {
       uniquePizzasList.push(elemMy)
     }
   };
