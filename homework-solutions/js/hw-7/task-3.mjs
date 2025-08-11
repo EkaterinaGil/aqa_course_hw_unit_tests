@@ -17,11 +17,10 @@ function digitalRoot(number) {
     numSum += Number(elem);
   };
 
-  if (numSum > 9) {
-    return digitalRoot(numSum);
-  } else {
-    return numSum;
-  }
+  return numSum > 9 
+    ? digitalRoot(numSum)
+    : numSum;
+ 
 }
 //console.log(digitalRoot(987654321))
 
