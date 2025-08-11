@@ -9,7 +9,19 @@
 */
 
 function digitalRoot(number) {
-  // Ваш код
+  const numStr = String(number);
+  const nums = numStr.split('');
+  let numSum = 0;
+
+  for (const elem of nums) {
+    numSum += Number(elem);
+  };
+
+  return numSum > 9 
+    ? digitalRoot(numSum)
+    : numSum;
+ 
 }
+//console.log(digitalRoot(987654321))
 
 export { digitalRoot };
