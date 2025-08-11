@@ -21,6 +21,7 @@ function mergeArrays(...arrays) {
     - Пример: I am super engineer => i_Am_Super_Engineer
   */
 function devideBy(sentence) {
+  if (sentence === '') return sentence;
   const array = sentence.split(' ');
   const modifyedArray = [];
   for (let elem of array) {
@@ -32,9 +33,10 @@ function devideBy(sentence) {
   }
   modifyedArray[0] = modifyedArray[0].toLowerCase();
   const joinedString = modifyedArray.join('_');
-  return joinedString
+  return joinedString;
+
 }
-//console.log(devideBy("  HeLLo     WoRLD  "));
+//console.log(devideBy(''));
 
 /*
   3. Фибаначчи
@@ -45,12 +47,14 @@ function devideBy(sentence) {
     - Например fibonacci(8) //21
   */
 function fibonacci(n) {
+  const arr = [0, 1];
   if (n < 2) {
-    return n;
-  } else {
-    return fibonacci(n - 1) + fibonacci(n - 2);
+    return arr[n];
   }
+  for (let i = 2; i <= n; i++) {
+    arr[i] = arr[i - 1] + arr[i - 2];
+  }
+  return arr[n];
 }
-//console.log(fibonacci(8));
 
 export { mergeArrays, fibonacci, devideBy };
