@@ -5,11 +5,11 @@
 
   Пример: const arr = [5,2,7,3,8,1,6] //4
 */
-
+const arr = [1, 2, 3, 4]
 function findMissingNumber(numbers) {
   let sortedArray = [...numbers].sort((a, b) => a - b);
   const missingNumber = sortedArray.find((item, i) => item !== i + 1);
-  return missingNumber + 1;
+  return missingNumber ? missingNumber - 1 : sortedArray.length + 1;
 }
-
+console.log(findMissingNumber(arr));
 export { findMissingNumber };
