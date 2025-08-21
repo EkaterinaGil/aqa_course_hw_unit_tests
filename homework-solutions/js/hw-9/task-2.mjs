@@ -14,16 +14,8 @@ const characters = [
 ];
 
 function addCharacter(character) {
-  if (!character.name || typeof character.name !== "string") {
-    throw new Error("Невалидное имя, должна быть строка")
-  };
-  if (!character.age || typeof character.age !== "number") {
-    throw new Error("Невалидный возраст, должно быть число")
-  };
-  characters.push({ name: character.name, age: character.age });
+  // Ваш код
 };
-addCharacter({ name: 'Екатерина', age: 39 });
-console.log(characters);
 
 function getCharacter(name) {
   // Ваш код
