@@ -26,7 +26,8 @@ const logSpy = jest.spyOn(console, 'log');
 
 let keyValuePairs = Object.entries(character);
 
-for (let elem of keyValuePairs) {
+for (const [key, value] of keyValuePairs) {
+    console.log(`key = ${key}, value = ${value}`);
   console.log(`key = ${elem[0]}, value = ${elem[1]}`);
 }
 
