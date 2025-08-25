@@ -18,19 +18,46 @@ function addCharacter(character) {
 };
 
 function getCharacter(name) {
-  // Ваш код
+  if (!name || typeof name !== "string") {
+    throw new Error("Невалидное имя, должна быть строка")
+  };
+  return characters.find((elem) => elem.name === name)
 }
 
 function getCharactersByAge(minAge) {
-  // Ваш код
+  if (!minAge || typeof minAge !== "number") {
+    throw new Error("Невалидный возраст, должно быть число")
+  };
+  return characters.filter((elem) => elem.age >= minAge)
 }
 
 function updateCharacter(name, newCharacter) {
-  // Ваш код
+  if (!name || typeof name !== "string") {
+    throw new Error("Невалидное имя, должна быть строка")
+  };
+  if (!newCharacter.name || typeof newCharacter.name !== "string") {
+    throw new Error("Невалидное имя, должна быть строка")
+  };
+  if (!newCharacter.age || typeof newCharacter.age !== "number") {
+    throw new Error("Невалидный возраст, должно быть число")
+  };
+  const index = characters.findIndex((elem) => elem.name === name);
+  if (index === -1) {
+    throw new Error(`Персонаж с именем ${name} не найден`);
+  };
+  characters[index].name = newCharacter.name;
+  characters[index].age = newCharacter.age;
 }
 
 function removeCharacter(name) {
-  // Ваш код
+  if (!name || typeof name !== "string") {
+    throw new Error("Невалидное имя, должна быть строка")
+  };
+  const index = characters.findIndex((elem) => elem.name === name);
+  if (index === -1) {
+    throw new Error(`Персонаж с именем ${name} не найден`);
+  };
+  characters.splice(index, 1);
 }
 
 export { characters, addCharacter, updateCharacter, getCharacter, getCharactersByAge, removeCharacter };
