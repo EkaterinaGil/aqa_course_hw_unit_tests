@@ -4,7 +4,7 @@ class Employee {
     this.firstName = firstName;
     this.lastName = lastName;
     this.profession = profession;
-    this.#salary = salary;
+    this.salary = salary;
   };
   get firstName() {
     return this._firstName;
@@ -45,12 +45,11 @@ class Employee {
 }
 
 class Company {
-  #employees;
-  constructor(title, phone, address, employees = []) {
+  #employees = [];
+  constructor(title, phone, address) {
     this.title = title;
     this.phone = phone;
     this.address = address;
-    this.#employees = employees;
   };
   get title() {
     return this._title;
@@ -114,18 +113,18 @@ class Company {
 
 }
 
-// const emp1 = new Employee('John', 'Doe', 'Developer', 3000);
-// const emp2 = new Employee('Jane', 'Smith', 'Manager', 5000);
-// const emp3 = new Employee('Mark', 'Brown', 'Designer', 4000);
+const emp1 = new Employee('John', 'Doe', 'Developer', 3000);
+const emp2 = new Employee('Jane', 'Smith', 'Manager', 5000);
+const emp3 = new Employee('Mark', 'Brown', 'Designer', 4000);
 
-// const company = new Company('Tech Corp', 123456, 'Main Street');
-// company.addEmployee(emp1);
-// company.addEmployee(emp2);
-// company.addEmployee(emp3);
+const company = new Company('Tech Corp', 123456, 'Main Street');
+company.addEmployee(emp1);
+company.addEmployee(emp2);
+company.addEmployee(emp3);
 
-// console.log(company.getTotalSalary()); // 12000
-// console.log(company.findEmployeeByName('Jane')); // Employee { firstName: 'Jane', ... }
-// company.removeEmployee('jane');
-// console.log(company.getEmployees()); // [Employee, Employee]
+console.log(company.getTotalSalary()); // 12000
+console.log(company.findEmployeeByName('Jane')); // Employee { firstName: 'Jane', ... }
+company.removeEmployee('Jane');
+console.log(company.getEmployees()); // [Employee, Employee]
 
 export { Employee, Company };
