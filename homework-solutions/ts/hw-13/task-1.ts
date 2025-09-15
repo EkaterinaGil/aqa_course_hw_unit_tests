@@ -1,21 +1,21 @@
 //1
 // Переменная числового типа
-let num1: number = 42;
+const num1: number = 42;
 
 // Переменная строкового типа
-let str: string = "Hello, TypeScript!";
+const str: string = "Hello, TypeScript!";
 
 // Переменная булевого типа
-let isComplete: boolean = true;
+const isComplete: boolean = true;
 
 // Переменная массива чисел
-let numbers: Array<number> = [1, 2, 3, 4, 5];
+const numbers: Array<number> = [1, 2, 3, 4, 5];
 
 // Переменная массива строк
-let cities: string[] = ["Minsk", "Warsaw", "London"];
+const cities: string[] = ["Minsk", "Warsaw", "London"];
 
 // Переменная объекта
-let person: { name: string; age: number; city: string } = {
+const person: { name: string; age: number; city: string } = {
     name: "Alice",
     age: 30,
     city: "Minsk"
@@ -34,7 +34,7 @@ type Grade = 'junior' | 'middle' | 'senior';
 
 //3
 // Интерфейс Car
-interface Car {
+interface ICar {
     brand: string;
     model: string;
     year?: number;
@@ -42,14 +42,14 @@ interface Car {
 
 //4
 // Интерфейс Address
-interface Address {
+interface IAddress {
     street: string;
     city: string;
     zipCode: number;
 }
 
 // Интерфейс FullAddress (расширяет Address)
-interface FullAddress extends Address {
+interface IFullAddress extends IAddress {
     country: string;
 }
 
@@ -68,7 +68,7 @@ type DiscountedProduct = Product & {
 
 //6
 function calculateDiscount(obj: DiscountedProduct): number {
-    return obj.price - obj.discount;
+    return obj.price - (obj.price * obj.discount / 100);
 }
 
 const product: DiscountedProduct = {
