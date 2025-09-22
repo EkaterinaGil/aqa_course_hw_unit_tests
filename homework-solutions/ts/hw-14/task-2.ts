@@ -1,5 +1,5 @@
-function mapArray<T>(array: T[], callback: Function): T[] {
-    const newArr = [];
+function mapArray<T, U>(array: T[], callback: (element: T, index: number, array: T[]) => U): U[] {
+    const newArr: U[] = [];
     for (let i = 0; i < array.length; i++) {
         const newElement = callback(array[i], i, array);
         newArr.push(newElement);
